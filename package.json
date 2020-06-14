@@ -1,0 +1,23 @@
+{
+  "name": "thrust-web",
+  "version": "1.0.0",
+  "description": "a web front end for thrust",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewtcraft/thrust-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drewtcraft/thrust-web/issues"
+  },
+  "homepage": "https://github.com/drewtcraft/thrust-web#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
