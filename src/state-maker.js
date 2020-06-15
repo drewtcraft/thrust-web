@@ -13,8 +13,8 @@ function polyfillRect (a, b) {
 	return points;
 }
 
-export default function () {
-	const states: [[], []];
+export default function (n) {
+	const states = [[]];
 
 	// fill first state with a straight up square
 	polyfillRect({ x: 100, y: 100 }, { x: 200, y: 200}).forEach(p => {
@@ -24,22 +24,28 @@ export default function () {
 		});
 	});
 
-	// fill next state with a move
-	polyfillRect({ x: 100, y: 101 }, { x: 200, y: 201 }).forEach(p => {
-		states[1].push({
-			point: p,
-			color: 'black',
-		});
+	console.log(states)
 
-	});
+	for (let i = 0; i < n; i++) {
+			states[i + 1] = [];
+			// fill next state with a move
+			polyfillRect({ x: 100, y: 100 + i + 1 }, { x: 200, y: 200 + i + 1 }).forEach(p => {
+				states[i + 1].push({
+					point: p,
+					color: 'black',
+				});
 
-	// another layer on second state to clear previous row
-	polyfillRect({ x: 100, y: 100, }, { x: 200, y: 100 }).forEach(p => {
-		states[1].push({
-			point: p,
-			color: null,
-		});
-	});
+			});
+
+			// another layer on second state to clear previous row
+			polyfillRect({ x: 100, y: 100 + i }, { x: 200, y: 100 + i + 1 }).forEach(p => {
+				states[i + 1].push({
+					point: p,
+					color: null,
+				});
+			});
+	}
+
 
 	return states;
 
