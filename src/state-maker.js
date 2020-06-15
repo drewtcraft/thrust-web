@@ -13,8 +13,8 @@ function polyfillRect (a, b) {
 	return points;
 }
 
-module.exports = function () {
-	const states: [[], [], []];
+export default function () {
+	const states: [[], []];
 
 	// fill first state with a straight up square
 	polyfillRect({ x: 100, y: 100 }, { x: 200, y: 200}).forEach(p => {
@@ -40,5 +40,7 @@ module.exports = function () {
 			color: null,
 		});
 	});
+
+	return states;
 
 }
