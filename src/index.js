@@ -28,8 +28,8 @@ const PIXEL_SIZE = 2;
 		}
 		if (method == 'clearRect') console.log('ok');
 		ctx[method](
-			coord.x - (PIXEL_SIZE / 2) * PIXEL_SIZE, 
-			coord.y - (PIXEL_SIZE / 2) * PIXEL_SIZE, 
+			PIXEL_SIZE * coord.x - (PIXEL_SIZE / 2), 
+			PIXEL_SIZE * coord.y - (PIXEL_SIZE / 2), 
 			PIXEL_SIZE, 
 			PIXEL_SIZE);
 	}
